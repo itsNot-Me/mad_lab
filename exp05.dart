@@ -19,7 +19,7 @@ class _MyNavigation extends State<MyNavigation> {
         title: Text("Navigation Tutorail"),
       ),
       body: Center(
-        child: RaisedButton(
+        child: ElevatedButton(
           child: Text("Click Here"),
           onPressed: () {
             Navigator.push(context, MaterialPageRoute(builder: (context) => MyPageDetail()));
@@ -37,7 +37,7 @@ class MyPageDetail extends StatelessWidget {
       appBar: AppBar(
         title: Text("Navigation Result"),
 
-              ),
+      ),
       body: Center(
         child: Column(
           children: <Widget>[

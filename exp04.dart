@@ -28,12 +28,12 @@ class MyFormState extends State<MyForm> {
                   padding: EdgeInsets.all(10.0),
                   child: TextFormField(
                     validator: (msg) {
-                      if (msg.isEmpty) {
+                      if (msg == null) {
                         return "Please enter name";
                       }
                       return null;
                     },
-                                        decoration: InputDecoration(labelText: "Name", hintText: "Enter Your Name", border: OutlineInputBorder(borderRadius: BorderRadius.circular(10.0))),
+                    decoration: InputDecoration(labelText: "Name", hintText: "Enter Your Name", border: OutlineInputBorder(borderRadius: BorderRadius.circular(10.0))),
                   ),
                 ),
                 Padding(
@@ -41,7 +41,7 @@ class MyFormState extends State<MyForm> {
                   child: TextFormField(
                     keyboardType: TextInputType.phone,
                     validator: (msg) {
-                      if (msg.isEmpty) {
+                      if (msg == null) {
                         return "Please enter Mobile Number";
                       }
                       if (msg.length != 10) {
@@ -55,8 +55,8 @@ class MyFormState extends State<MyForm> {
                 Padding(
                   padding: EdgeInsets.all(10.0),
                   child: TextFormField(
-                          validator: (msg) {
-                      if (msg.isEmpty) {
+                    validator: (msg) {
+                      if (msg == null) {
                         return "Please enter Mobile Number";
                       }
                       if (msg.length != 6) {
@@ -74,9 +74,9 @@ class MyFormState extends State<MyForm> {
       floatingActionButton: FloatingActionButton(
         child: Icon(Icons.done),
         onPressed: () {
-          _myFormKey.currentState.validate();
+            _myFormKey.currentState?.validate();
         },
       ),
-          );
+    );
   }
 }
